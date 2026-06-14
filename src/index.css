@@ -1,0 +1,68 @@
+body{
+  background-image: url("./images/background-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display:grid;
+  margin:0;
+  place-items:center;
+  min-height: 100vh;
+
+}
+
+.App h1{
+  font-size: 80px;
+  text-align:center;
+  margin-top:10px;
+}
+
+.App h2{
+font-size: 50px;
+text-align:center;
+}
+ .App h3{
+  font-size:40px;
+  text-align:center;
+  margin-top:90px;
+ }
+.card-container{
+  background-color:white;
+  width:1200px;
+  height:600px;
+  border-radius: 20px;
+  margin-top:100px;
+  opacity: 0.8;
+  cursor:pointer;
+   box-shadow: 10px 10px 20px 12px rgb(46, 43, 43);
+}
+
+.card-container:hover{
+  box-shadow: 10px 10px 20px 12px black;
+}
+
+.card-container h3{
+  text-align: center;
+  font-size:50px;
+  line-height:12.0;
+}
+
+.button{
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  cursor: pointer;
+  width:150px;
+  height:80px;
+  border-radius: 15px;
+  margin-left: 540px;
+}
+
+.button:hover{
+  background-color: rgb(84, 108, 225);
+}
