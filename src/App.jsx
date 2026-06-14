@@ -12,25 +12,26 @@ import tungtungImg from './images/tung-tung.jpg';
 
 function App() {
   const brainrotDeck = [
-    { front: "Who is this?", back: "Chimpanzini Bananini", image: chimpanziniImg},
+    { front: "Who is this?", back: "Chimpanzini Bananini", image: chimpanziniImg },
     { front: "Which Italian brainrot is this?", back: "Boneca Ambalabu", image: bonecaImg },
-    { front: "Which Italian brainrot is this?", back: "Trippi Troppi", image: trippiImg},
-    { front: "Guess this brainrot animal?", back: "Frigo Camelo" , image: frigoImg},
-    { front: "Who is this?", back: "Sigma Boy", image: sigmaBoyImg},
-    { front: "Who dis?", back: "Ballerina Cappuccina" , image: ballerinaImg},
-    { front: "Who?", back: "Tralalero Tralala" , image: tralaleroImg},
-    { front: "Who ts?", back: "Tung Tung Tung Sahur" , image: tungtungImg}
+    { front: "Which Italian brainrot is this?", back: "Trippi Troppi", image: trippiImg },
+    { front: "Guess this brainrot animal?", back: "Frigo Camelo", image: frigoImg },
+    { front: "Who is this?", back: "Sigma Boy", image: sigmaBoyImg },
+    { front: "Who dis?", back: "Ballerina Cappuccina", image: ballerinaImg },
+    { front: "Who?", back: "Tralalero Tralala", image: tralaleroImg },
+    { front: "Who ts?", back: "Tung Tung Tung Sahur", image: tungtungImg }
   ];
 
   // 2. Track which card index we are on. Start at -1 for the start screen.
   const [cardIndex, setCardIndex] = useState(0);
 
   const handleNextCard = () => {
-    if (cardIndex < brainrotDeck.length - 1) {
-      setCardIndex(cardIndex + 1); // Move to next card
-    } else {
-      setCardIndex(-1); // Loop back to the start screen if they finish the deck
+    let randomIndex = cardIndex;
+
+    while (randomIndex === cardIndex) {
+      randomIndex = Math.floor(Math.random() * brainrotDeck.length);
     }
+    setCardIndex(randomIndex);
   };
 
   return (
