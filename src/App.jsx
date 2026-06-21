@@ -23,15 +23,20 @@ function App() {
   ];
 
   // 2. Track which card index we are on. Start at -1 for the start screen.
-  const [cardIndex, setCardIndex] = useState(0);
+  const [cardIndex, setCardIndex] = useState(-1);
 
   const handleNextCard = () => {
-    let randomIndex = cardIndex;
-
-    while (randomIndex === cardIndex) {
-      randomIndex = Math.floor(Math.random() * brainrotDeck.length);
+    let nextIndex = cardIndex;
+    if ( cardIndex < brainrotDeck.length - 1) {
+      setCardIndex(cardIndex + 1);
     }
-    setCardIndex(randomIndex);
+  };
+
+   const handlePrevCard = () => {
+    let prevIndex = cardIndex;
+    if (cardIndex > -1) {
+      setCardIndex(cardIndex - 1);
+    } 
   };
 
   return (
@@ -54,10 +59,13 @@ function App() {
             imageSrc={brainrotDeck[cardIndex].image}
           />
         )}
-        <button className="button" onClick={handleNextCard}> → </button>
-      </div>
-    </div>
-  );
-}
+        <div className="buttons">
+        <button className="button" onClick={handlePrevCard} disabled={cardIndex === -1}> ← </button>
+        <button className="button" onClick={handleNextCard} disabled={cardIndex === brainrotDeck.length - 1}> → </button>
+          </div>
+          </div>
+          </div>
+          );
+          }
 
-export default App;
+          export default App;
